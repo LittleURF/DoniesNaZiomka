@@ -1,0 +1,8 @@
+doniesnaziomka.pl
+
+Mammon jedzie na wozku na komende, zajmuje to 30/60 sekund, i w tym czasie gracz musi jak najszybciej napisac jak najwieksza czesc donosu.
+W trakcie mogą wystąpic losowe eventy jak odkurzac automatyczny, ktory wciagnie ostatnie kilka liter. Nie wciskaja mi sie przyciski, ktore zablokuja input co ktoregos klawisza.
+itd itp. (w tle male/duze gify z powiazanych wydarzen)
+
+
+Jesli napisze cały - reakcja z zestawu X (bez powtorek poki sie nie skoncza), Jesli napisze 70-99 - ...

@@ -1,4 +1,4 @@
-export namespace AppActions {
+export namespace GameActions {
   export class ChangeApp {
     static readonly type = '[App] Change app';
 

@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Store } from '@ngxs/store';
-import { AppActions } from './state/app.actions';
+import { GameActions } from './features/game/state/game.actions';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,7 @@ export class AppComponent {
 
   constructor() {
     setTimeout(() => {
-      this.store.dispatch(new AppActions.ChangeApp('Mammoniada'));
+      this.store.dispatch(new GameActions.ChangeApp('Mammoniada'));
     }, 5000);
   }
 }

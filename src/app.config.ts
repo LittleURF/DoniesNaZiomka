@@ -6,13 +6,13 @@ import { withNgxsRouterPlugin } from '@ngxs/router-plugin';
 
 import { routes } from './app.routes';
 import { provideStore } from '@ngxs/store';
-import { AppState } from './state/app.state';
+import { GameState } from './features/game/state/game.state';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideStore([AppState]),
+    provideStore([GameState]),
     withNgxsRouterPlugin(),
     withNgxsReduxDevtoolsPlugin(),
     withNgxsLoggerPlugin(),

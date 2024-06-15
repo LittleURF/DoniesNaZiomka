@@ -1,7 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Store } from '@ngxs/store';
-import { GameActions } from './features/game/state/game.actions';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +8,4 @@ import { GameActions } from './features/game/state/game.actions';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  private readonly store = inject(Store);
-
-  constructor() {
-    setTimeout(() => {
-      this.store.dispatch(new GameActions.ChangeApp('Mammoniada'));
-    }, 5000);
-  }
-}
+export class AppComponent {}

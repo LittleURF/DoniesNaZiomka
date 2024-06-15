@@ -1,7 +1,13 @@
 export namespace GameActions {
-  export class ChangeApp {
-    static readonly type = '[App] Change app';
+  export class PrepareGame {
+    static readonly type = '[Game] Prepare';
 
-    constructor(public app: string) {}
+    constructor() {}
+  }
+
+  export class StartGame {
+    static readonly type = '[Game] Start';
+
+    constructor() {}
   }
 }

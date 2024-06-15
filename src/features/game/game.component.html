@@ -1,1 +1,22 @@
-<h1>game works!</h1>
+<div class="flex flex-col items-center">
+  <div
+    class="w-3/4 max-w-[800px] min-h-20 border border-solid border-black mb-6 bg-slate-200 pointer-events-none select-none text-lg p-2"
+  >
+    {{ status() === "waiting" ? "Ja to lubie mortadele..." : textToWrite() }}
+  </div>
+  <input
+    type="text"
+    class="w-3/4 max-w-[800px] h-9 text-lg mb-12 p-2 outline-none"
+    [disabled]="status() === 'waiting'"
+  />
+  @if (status() === 'starting') {
+  <span>{{ startDateIso() | countdown | async }}</span>
+  }
+  <button
+    class="w-20 h-7 bg-blue-600 border border-solid border-black"
+    [disabled]="status() !== 'waiting'"
+    (click)="startGame()"
+  >
+    Start
+  </button>
+</div>

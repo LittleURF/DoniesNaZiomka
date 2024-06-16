@@ -1,6 +1,5 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { withNgxsLoggerPlugin } from '@ngxs/logger-plugin';
 import { withNgxsReduxDevtoolsPlugin } from '@ngxs/devtools-plugin';
 import { withNgxsRouterPlugin } from '@ngxs/router-plugin';
 
@@ -15,6 +14,5 @@ export const appConfig: ApplicationConfig = {
     provideStore([GameState]),
     withNgxsRouterPlugin(),
     withNgxsReduxDevtoolsPlugin(),
-    withNgxsLoggerPlugin(),
   ],
 };

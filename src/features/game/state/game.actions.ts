@@ -10,4 +10,10 @@ export namespace GameActions {
 
     constructor() {}
   }
+
+  export class UpdateInputText {
+    static readonly type = '[Game] Update input text';
+
+    constructor(public text: string) {}
+  }
 }

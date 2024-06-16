@@ -2,6 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Observable, of, timer } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+// This bad boy is stolen & quickly modified to only work for my specific use case. low seconds countdown
+
 @Pipe({
   name: 'countdown',
   standalone: true,

@@ -1,0 +1,33 @@
+<svg id="bezglowy" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" style="background-color:transparent">
+  <g id="bezglowy-s-g1">
+    <path id="bezglowy-u-ellipse" d="M36.95496,179.76898c0-23.4721,19.0279-42.5,42.5-42.5s42.5,19.0279,42.5,42.5-19.0279,42.5-42.5,42.5-42.5-19.0279-42.5-42.5Z" fill="none" stroke="#000" stroke-width="12" />
+    <line id="bezglowy-s-line1" x1="0" y1="18.558454" x2="0" y2="-18.558454" transform="matrix(1 0 0 2.171825 79.45496 179.76898)" fill="none" stroke="#000" stroke-width="8" />
+    <line id="bezglowy-s-line2" x1="0" y1="18.558454" x2="0" y2="-18.558454" transform="matrix(-.011818 0.99993-2.171673-.025666 79.454958 179.768978)" fill="none" stroke="#000" stroke-width="8" />
+    <line id="bezglowy-s-line3" x1="0" y1="18.558454" x2="0" y2="-18.558454" transform="matrix(.678869 0.73426-1.594684 1.474384 79.454958 179.768979)" fill="none" stroke="#000" stroke-width="8" />
+    <line id="bezglowy-s-line4" x1="0" y1="18.558454" x2="0" y2="-18.558454" transform="matrix(-.701025 0.713136-1.548808-1.522504 79.454958 179.768976)" fill="none" stroke="#000" stroke-width="8" />
+  </g>
+  <rect id="bezglowy-s-rect1" width="50.159601" height="18.490938" rx="0" ry="0" transform="translate(115.45138 150)" stroke-width="0" />
+  <line id="bezglowy-s-line5" x1="0" y1="18.558454" x2="0" y2="-18.558454" transform="matrix(-.999979 0.006413-.007682-1.19785 158.192564 190.721189)" fill="none" stroke="#000" stroke-width="8" />
+  <line id="bezglowy-s-line6" x1="0" y1="7.174724" x2="0" y2="-18.558454" transform="matrix(-1.211727 0.470868-.349916-.90047 57.510551 67.460624)" fill="none" stroke="#000" stroke-width="8" />
+  <line id="bezglowy-s-line7" x1="0" y1="18.558454" x2="0" y2="-18.558454" transform="matrix(-.008827-1.029962-1.069934 0.009169 40.015909 60.630169)" fill="none" stroke="#000" stroke-width="8" />
+  <line id="bezglowy-s-line8" x1="0" y1="17.271353" x2="0" y2="-18.558454" transform="matrix(1.399971-.008978-.009959-1.552865 63.188698 108.450205)" fill="none" stroke="#000" stroke-width="8" />
+  <path id="bezglowy-u-ellipse2" d="M36.95496,179.76898c0-23.4721,19.0279-42.5,42.5-42.5s42.5,19.0279,42.5,42.5-19.0279,42.5-42.5,42.5-42.5-19.0279-42.5-42.5Z" transform="matrix(.190068 0 0 0.213733 142.948155 172.56848)" fill="none" stroke="#000" stroke-width="25" />
+  <rect id="bezglowy-s-rect2" width="93.114587" height="14.789429" rx="7.39" ry="7.39" transform="matrix(.725684 0.688028-.688028 0.725684 125.626925 127.10947)" stroke-width="0" />
+  <rect id="bezglowy-s-rect3" width="93.114587" height="14.789429" rx="7.39" ry="7.39" transform="matrix(.249804-.154594 0.526241 0.850335 175.68 192.084454)" stroke-width="0" />
+  <rect id="bezglowy-s-rect4" width="93.114587" height="14.789429" rx="7.39" ry="7.39" transform="matrix(.801107-.001904 0.002376 0.999997 64.00445 129.962921)" stroke-width="0" />
+  <rect id="bezglowy-s-rect5" width="93.114587" height="14.789429" rx="7.39" ry="7.39" transform="matrix(.153213 1.032514-1.192749 0.17699 81.67967 39.082188)" stroke-width="0" />
+  <rect id="bezglowy-s-rect6" width="50.159601" height="18.490938" rx="0" ry="0" transform="translate(65.291779 95.120882)" stroke-width="0" />
+   <!-- MAMONSKA GLOWA -->
+   <!-- https://stackoverflow.com/questions/30897108/how-can-i-display-an-image-inside-svg-circle-in-html5 -->
+    <defs>
+    <clipPath id="circleView">
+        <circle cx="120" cy="120" r="100" />
+    </clipPath>
+    </defs>
+    <!-- <image 
+      width="240" 
+      height="240" 
+      xlink:href="https://static.wikia.nocookie.net/adzioo/images/4/45/Mammon_3.png/revision/latest?cb=20211205210809&amp;path-prefix=pl" 
+      clip-path="url(#circleView)"
+    /> -->
+</svg>

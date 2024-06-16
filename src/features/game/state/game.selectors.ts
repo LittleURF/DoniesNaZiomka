@@ -16,4 +16,9 @@ export class GameSelectors {
   static TextToWrite(game: GameStateModel) {
     return game.textToWrite;
   }
+
+  @Selector([GameState])
+  static TextInput(game: GameStateModel) {
+    return game.textInput;
+  }
 }

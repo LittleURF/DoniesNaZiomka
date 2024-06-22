@@ -38,29 +38,20 @@ export class GameState {
       // // );
       state.wordsToWrite.at(0)!.status = 'InProgress';
     });
-
-    ctx.dispatch(new GameActions.StartGame());
   }
 
   @Action(GameActions.StartGame)
   startGame(ctx: StateContext<GameStateModel>) {
-    const startDate = new Date(ctx.getState().startDateIso!);
-
-    return timer(startDate).pipe(
-      tap(() => {
-        updateState(ctx, (state) => {
-          state.status = 'running';
-        });
-      }),
-    );
+    updateState(ctx, (state) => {
+      state.status = 'running';
+    });
   }
 
-  @Action(GameActions.FinishGame)
-  finishGame(ctx: StateContext<GameStateModel>, action: GameActions.FinishGame) {
+  @Action([GameActions.FinishGame, GameActions.GameTimerRanOut])
+  finishGame(ctx: StateContext<GameStateModel>) {
     updateState(ctx, (state) => {
-      if (action.success) {
-        state.status = 'waiting';
-      }
+      state.status = 'waiting';
+      state.startDateIso = null;
     });
   }
 

@@ -6,6 +6,7 @@ import { withNgxsRouterPlugin } from '@ngxs/router-plugin';
 import { routes } from './app.routes';
 import { provideStore } from '@ngxs/store';
 import { GameState } from './features/game/state/game.state';
+import { GameEffects } from './features/game/state/game.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,5 +19,6 @@ export const appConfig: ApplicationConfig = {
     }),
     withNgxsRouterPlugin(),
     withNgxsReduxDevtoolsPlugin(),
+    GameEffects,
   ],
 };

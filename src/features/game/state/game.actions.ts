@@ -17,6 +17,12 @@ export namespace GameActions {
     constructor(public success: boolean) {}
   }
 
+  export class GameTimerRanOut {
+    static readonly type = '[Game] Timer ran out';
+
+    constructor() {}
+  }
+
   export class UpdateInputText {
     static readonly type = '[Game] Update input text';
 

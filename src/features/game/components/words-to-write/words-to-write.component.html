@@ -1,0 +1,9 @@
+<div
+  class="w-3/4 max-w-[800px] min-h-20 border border-solid border-black mb-6 bg-slate-200 pointer-events-none select-none text-lg p-2"
+>
+  @if (wordsToWrite().length === 0) {
+  <span>{{ waitingWordsToWriteString }} </span>
+  } @else { @for (word of wordsToWrite(); track $index) {
+  <span [class.current-word]="word.status === 'InProgress'"> {{ word.text }} </span>
+  } }
+</div>

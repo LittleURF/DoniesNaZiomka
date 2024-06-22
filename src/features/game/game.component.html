@@ -1,9 +1,5 @@
 <div class="flex flex-col items-center">
-  <div
-    class="w-3/4 max-w-[800px] min-h-20 border border-solid border-black mb-6 bg-slate-200 pointer-events-none select-none text-lg p-2"
-  >
-    {{ status() === "waiting" ? waitingText : textToWriteAsString() }}
-  </div>
+  <app-words-to-write [wordsToWrite]="wordsToWrite()"></app-words-to-write>
   <input
     [value]="textInput"
     (input)="textInputChanged($event)"

@@ -11,7 +11,11 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideStore([GameState]),
+    provideStore([GameState], {
+      selectorOptions: {
+        injectContainerState: false,
+      },
+    }),
     withNgxsRouterPlugin(),
     withNgxsReduxDevtoolsPlugin(),
   ],

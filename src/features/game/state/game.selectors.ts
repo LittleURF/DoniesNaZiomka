@@ -1,7 +1,10 @@
-import { Selector } from '@ngxs/store';
+import { Selector, createPropertySelectors, createSelector } from '@ngxs/store';
 import { GameState, GameStateModel } from './game.state';
+import { WordToWrite } from './game';
 
 export class GameSelectors {
+  static getSlices = createPropertySelectors<GameStateModel>(GameState);
+
   @Selector([GameState])
   static Status(game: GameStateModel) {
     return game.status;
@@ -13,8 +16,14 @@ export class GameSelectors {
   }
 
   @Selector([GameState])
-  static TextToWrite(game: GameStateModel) {
-    return game.textToWrite;
+  static WordsToWrite(game: GameStateModel) {
+    return game.wordsToWrite;
+  }
+
+  static CurrentWordToWrite() {
+    return createSelector([GameSelectors.WordsToWrite], (textToWrite) =>
+      textToWrite.find((w) => w.status === 'InProgress'),
+    );
   }
 
   @Selector([GameState])

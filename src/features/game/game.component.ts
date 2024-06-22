@@ -7,28 +7,24 @@ import { CountdownPipe } from '../../shared/pipes/countdown.pipe';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { tap } from 'rxjs';
+import { WordsToWriteComponent } from './components/words-to-write/words-to-write.component';
 
 @Component({
   selector: 'app-game',
   standalone: true,
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss',
-  imports: [CountdownPipe, CommonModule, ReactiveFormsModule],
+  imports: [CountdownPipe, CommonModule, ReactiveFormsModule, WordsToWriteComponent],
 })
 export class GameComponent {
   private readonly store = inject(Store);
-  public textInput = '';
-  public readonly startDateIso = this.store.selectSignal(GameSelectors.StartDateIso);
 
+  public readonly startDateIso = this.store.selectSignal(GameSelectors.StartDateIso);
   public readonly status = this.store.selectSignal(GameSelectors.Status);
-  public readonly textToWrite = this.store.selectSignal(GameSelectors.TextToWrite);
-  public readonly textToWriteAsString = computed(() =>
-    this.textToWrite()
-      .map((w) => w.text)
-      .join(' '),
-  );
+  public readonly wordsToWrite = this.store.selectSignal(GameSelectors.WordsToWrite);
   public readonly textInput$ = this.store.select(GameSelectors.TextInput);
-  public readonly waitingText = 'Ja to lubie mortadele...';
+
+  public textInput = '';
 
   constructor() {
     this.textInput$.pipe(tap((textInput) => (this.textInput = textInput))).subscribe();

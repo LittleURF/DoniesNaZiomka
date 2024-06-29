@@ -1,5 +1,5 @@
-import { Component, computed, inject } from '@angular/core';
-import { Store } from '@ngxs/store';
+import { Component, ElementRef, ViewChild, computed, inject } from '@angular/core';
+import { Actions, Store, ofActionSuccessful } from '@ngxs/store';
 import { GameActions } from './state/game.actions';
 import { GameSelectors } from './state/game.selectors';
 import { DateTime } from 'luxon';
@@ -18,6 +18,10 @@ import { WordsToWriteComponent } from './components/words-to-write/words-to-writ
 })
 export class GameComponent {
   private readonly store = inject(Store);
+  private readonly actions$ = inject(Actions);
+
+  @ViewChild('input')
+  protected input!: ElementRef<HTMLInputElement>;
 
   public readonly startDateIso = this.store.selectSignal(GameSelectors.StartDateIso);
   public readonly status = this.store.selectSignal(GameSelectors.Status);
@@ -28,6 +32,16 @@ export class GameComponent {
 
   constructor() {
     this.textInput$.pipe(tap((textInput) => (this.textInput = textInput))).subscribe();
+
+    this.actions$
+      .pipe(
+        ofActionSuccessful(GameActions.StartGame),
+        tap(() => {
+          this.input.nativeElement.disabled = false;
+          this.input.nativeElement.focus();
+        }),
+      )
+      .subscribe();
   }
 
   startGame() {

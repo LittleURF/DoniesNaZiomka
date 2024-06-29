@@ -52,6 +52,7 @@ export class GameState {
     updateState(ctx, (state) => {
       state.status = 'waiting';
       state.startDateIso = null;
+      state.textInput = '';
     });
   }
 

@@ -3,5 +3,7 @@
 @tailwind utilities;
 
 body {
+  display: grid;
   background-color: rgb(68, 68, 68);
+  min-height: 100vh;
 }

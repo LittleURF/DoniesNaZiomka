@@ -21,9 +21,18 @@ export class GameSelectors {
   }
 
   static CurrentWordToWrite() {
-    return createSelector([GameSelectors.WordsToWrite], (textToWrite) =>
-      textToWrite.find((w) => w.status === 'InProgress'),
+    return createSelector([GameSelectors.WordsToWrite], (wordsToWrite) =>
+      wordsToWrite.find((w) => w.status === 'InProgress'),
     );
+  }
+
+  static Progress() {
+    return createSelector([GameSelectors.WordsToWrite], (wordsToWrite) => {
+      const max = wordsToWrite.length;
+      const finished = wordsToWrite.filter((w) => w.status === 'Finished').length;
+
+      return Math.floor((finished / max) * 100);
+    });
   }
 
   @Selector([GameState])

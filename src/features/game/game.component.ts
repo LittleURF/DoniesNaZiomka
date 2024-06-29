@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, computed, inject } from '@angular/core';
+import { Component, ElementRef, ViewChild, computed, effect, inject } from '@angular/core';
 import { Actions, Store, ofActionSuccessful } from '@ngxs/store';
 import { GameActions } from './state/game.actions';
 import { GameSelectors } from './state/game.selectors';
@@ -8,13 +8,20 @@ import { AsyncPipe, CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { tap } from 'rxjs';
 import { WordsToWriteComponent } from './components/words-to-write/words-to-write.component';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 
 @Component({
   selector: 'app-game',
   standalone: true,
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss',
-  imports: [CountdownPipe, CommonModule, ReactiveFormsModule, WordsToWriteComponent],
+  imports: [
+    CountdownPipe,
+    CommonModule,
+    ReactiveFormsModule,
+    WordsToWriteComponent,
+    ProgressBarComponent,
+  ],
 })
 export class GameComponent {
   private readonly store = inject(Store);
@@ -27,6 +34,7 @@ export class GameComponent {
   public readonly status = this.store.selectSignal(GameSelectors.Status);
   public readonly wordsToWrite = this.store.selectSignal(GameSelectors.WordsToWrite);
   public readonly textInput$ = this.store.select(GameSelectors.TextInput);
+  public readonly progress = this.store.selectSignal(GameSelectors.Progress());
 
   public textInput = '';
 
